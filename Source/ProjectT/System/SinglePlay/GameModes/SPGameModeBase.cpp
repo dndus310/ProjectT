@@ -279,9 +279,6 @@ bool ASPGameModeBase::ChangedProcessEvent(const EProcessState ProcessState)
 				FString CurrentLevelName = UGameplayStatics::GetCurrentLevelName(World);
 				
 				UGameplayStatics::OpenLevel(World, *CurrentLevelName);
-				
-				//FIXME 데이터 테이블 레벨 패스정보가 달라서 크래시 발생
-				// SM->PrepareLevelLoad(UGlobalUtilsLibrary::GetStringToEnum<EStage>(CurrentLevelName));	
 			}));
 			Execute_GetSPWidgetManager(this)->ExecuteOnGameDefeat();
 			break;

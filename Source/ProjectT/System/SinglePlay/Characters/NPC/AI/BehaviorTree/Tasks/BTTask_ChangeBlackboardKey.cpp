@@ -32,7 +32,6 @@ void UBTTask_ChangeBlackboardKey::PostEditChangeProperty(FPropertyChangedEvent& 
 	{
 		bIsBool = KeySelector.SelectedKeyType->IsChildOf(UBlackboardKeyType_Bool::StaticClass());
 		bIsVector = KeySelector.SelectedKeyType->IsChildOf(UBlackboardKeyType_Vector::StaticClass());
-		// FIXME
 		bIsNpcStateEnum = KeySelector.SelectedKeyType->IsChildOf(UBlackboardKeyType_Enum::StaticClass());
 	}
 }

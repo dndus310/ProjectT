@@ -41,7 +41,6 @@ void UNotificationCenter::AddObserver(const ENotificationTypes NotificationTypes
 	Items.Emplace(NotificationCenterItem);
 }
 
-// FIXME: 현재는 동일한 오브젝트에서 동일한 알림 이름에 복수의 이벤트중 구분하여 삭제는 불가.
 void UNotificationCenter::RemoveObserver(const UObject* Object, const ENotificationTypes NotificationTypes)
 {
 	if(NotificationTypes != ENotificationTypes::None)

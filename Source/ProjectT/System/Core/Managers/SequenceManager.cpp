@@ -31,16 +31,6 @@ void USequenceManager::UpdateSequence(UWorld* World, const FName& RowName, const
 		Callback.Execute();
 		return;
 	}
-
-	// FIXME: 프로젝트 이주로 기존에 쓰던 데이터는 삭제됨 새로운 데이터 구조에 맞춰서 수정필요
-	// UDataDam* DataDam = IGlobalObjectProvider::Execute_GetDataDam(UGameplayStatics::GetGameInstance(World));
-	// FNSequenceListData* SequenceListData = DataDam->GetDataTableRowUnChecked<FNSequenceListData>(RowName);
-	// if(!NMT_ENSURE(SequenceListData))
-	// {
-	// 	Callback.Execute();
-	// 	return;
-	// }
-	// CurrentSequence = UGlobalUtilsLibrary::GetLevelSequenceFromPath(SequenceListData->sSequencePath);
 	
 	FMovieSceneSequencePlaybackSettings NewSettings;
 	
@@ -78,45 +68,6 @@ void USequenceManager::UpdateSequenceWithPlayRate(UWorld* World, const FName& Ro
 		Callback.Execute();
 		return;
 	}
-
-	// FIXME: 프로젝트 이주로 기존에 쓰던 데이터는 삭제됨 새로운 데이터 구조에 맞춰서 수정필요
-	// UDataDam* DataDam = IGlobalObjectProvider::Execute_GetDataDam(UGameplayStatics::GetGameInstance(World));
-	// FNSequenceListData* SequenceListData = DataDam->GetDataTableRowUnChecked<FNSequenceListData>(RowName);
-	// if(!NMT_ENSURE(SequenceListData))
-	// {
-	// 	Callback.Execute();
-	// 	return;
-	// }
-	// CurrentSequence = UGlobalUtilsLibrary::GetLevelSequenceFromPath(SequenceListData->sSequencePath);
-	//
-	// FMovieSceneSequencePlaybackSettings NewSettings;
-	//
-	// if(!SequencePlayer)
-	// 	SequencePlayer = ULevelSequencePlayer::CreateLevelSequencePlayer(World, CurrentSequence.Get(), NewSettings, SequenceActor);
-	//
-	// if(!NMT_ENSURE(CurrentSequence && SequencePlayer)) return;
-	//
-	// if(SequencePlayer->OnFinished.IsBound())
-	// 	SequencePlayer->OnFinished.RemoveAll(this);
-	//
-	// SequencePlayer->OnFinished.AddDynamic(this, &USequenceManager::OnFinishedSequence);
-	//
-	// if(OnEndSequence.IsBound())
-	// 	OnEndSequence.Unbind();
-	//
-	// OnEndSequence = Callback;
-	//
-	// SequencePlayer->Stop();
-	// SequenceActor->SetSequence(CurrentSequence);
-	// SequencePlayer->Play();
-	// SequencePlayer->SetPlayRate(PlayRate);
-	// OnSceneEvent.Broadcast(SequencePlayer->GetSequenceName());
-	// if(!OnSequenceStarted.IsBound()) return;
-	// OnSequenceStarted.Execute();
-	//
-	// UNotificationCenter* NC = IGlobalObjectProvider::Execute_GetNotificationCenter(UGameplayStatics::GetGameInstance(World));
-	// NC->Post(ENotificationTypes::Sequence_Begin);
-
 }
 
 void USequenceManager::ReleaseManager()
@@ -129,8 +80,6 @@ void USequenceManager::OnFinishedSequence()
 	if(SequencePlayer) SequencePlayer->SetPlayRate(1.0f);
 
 	UNotificationCenter* NC = IGlobalObjectProvider::Execute_GetNotificationCenter(UGameplayStatics::GetGameInstance(this));
-	// FIXME: 프로젝트 이주로 기존에 쓰던 데이터는 삭제됨 새로운 데이터 구조에 맞춰서 수정필요 
-	//NC->Post(ENotificationTypes::Sequence_End);
 	
 	if(!NMT_ENSURE(OnEndSequence.IsBound())) return;
 	OnEndSequence.Execute();

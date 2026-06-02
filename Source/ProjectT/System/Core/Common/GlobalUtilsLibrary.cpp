@@ -314,7 +314,6 @@ FVector UGlobalUtilsLibrary::GetBezierPointByDeCasteljau(const TArray<FVector>& 
 	return GetBezierPointByDeCasteljau(NextLevel, t);
 }
 
-// FIXME: 프로젝트 이주로 기존에 쓰던 데이터는 삭제됨 새로운 데이터 구조에 맞춰서 수정필요
 int32 UGlobalUtilsLibrary::GetEnumIndexFromString(EDataTableKey InEnum, FString InString)
 {
 	int32 Ret = 0;

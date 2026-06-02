@@ -83,9 +83,6 @@ void ACorePlayerController::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	//FIXME: 독립형 실행때 강제 스크린적용문제가 발생하여 임시로 주석 처리
-	// UCoreGameUserSettings::GetCoreGameUserSettings()->InitializeUserSettings();
-	
 	FInputModeGameAndUI UIInputMode;
 	UIInputMode.SetHideCursorDuringCapture(false);
 	SetInputMode(UIInputMode);

@@ -79,7 +79,6 @@ public:
 	UFUNCTION()
 	void EventOnDead();
 
-	//FIXME: 임시용 상호작용 불가능 아이콘 표시를 띄우기 위한 델리게이트 추가
 	UFUNCTION(BlueprintCallable)
 	void UpdateRequestInteractionIcon(const FOnRequestInteractIcon& Callback);
 
@@ -178,7 +177,6 @@ private:
 	void InitializeCharacterSet();
 
 public:
-	//FIXME: 임시용 상호작용 불가능 아이콘 표시를 띄우기 위한 델리게이트 추가 
 	UPROPERTY()
 	FOnRequestInteractIcon OnRequestInteractIcon;
 

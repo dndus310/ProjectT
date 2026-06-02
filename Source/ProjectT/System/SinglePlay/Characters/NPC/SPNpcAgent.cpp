@@ -1261,7 +1261,6 @@ void ASPNpcAgent::FinishCheckInChaseRange()
 
 void ASPNpcAgent::RelocateOnNavMesh()
 {
-	// FIXME : 현재 미사용. 테스트 필요
 	UWorld* World = UGlobalUtilsLibrary::GetValidWorld(this);
 	NMT_CHECKF(World);
 

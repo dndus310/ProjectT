@@ -29,7 +29,6 @@ public:
 	virtual UQuestManager* GetQuestManager_Implementation() override;
 	virtual bool HasFinishedLoading_Implementation() override;
 
-	//FIXME : 임시. 미니맵 렌더타겟 텍스처를 그리기 위한 함수
 	UFUNCTION(BlueprintNativeEvent)
 	void InitializeMapData();
 

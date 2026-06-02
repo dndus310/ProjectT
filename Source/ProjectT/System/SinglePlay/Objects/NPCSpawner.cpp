@@ -47,8 +47,6 @@ void ANPCSpawner::SpawnNPCByTable()
 		UWorld* World = GetWorld();
 		if(IsValid(World))
 		{
-			// @FIXME : 테이블에 따른 정보 필요
-
 			if(IsValid(SpawnedNPCActor))
 			{
 				SpawnedNPCActor->Destroy();

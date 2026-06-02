@@ -6,12 +6,7 @@
 #include "UObject/Object.h"
 #include "CoreCheatManager.generated.h"
 
-/**
- * NOTE:
- * Member Field: Prefix("bDebug") + BodyName 의 규칙성으로 작성필요, 'bool' type의 변수로만 사용할 목적으로 정의됨 
- * CheatManager::InitializeManager(): Member Field 네이밍 규칙에 영향이 있음
- * CheatManager::DebugResetStatus(): 'bool' type 규칙에 영향이 있음
- */
+
 USTRUCT(BlueprintType)
 struct FDebugStatus
 {

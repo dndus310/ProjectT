@@ -99,7 +99,6 @@ void UCoreGameUserSettings::SetSystemLanguage()
 	const FString ISOCode = UKismetSystemLibrary::GetDefaultLanguage();
 	EGameLanguage Language = EGameLanguage::English;
 	
-	// FIXME: 데이터테이블 생성 후 구조에 맞춰 수정 필요
 	if (ISOCode.StartsWith(TEXT("ko")))
 	{
 		Language = EGameLanguage::Korea;
@@ -178,8 +177,6 @@ void UCoreGameUserSettings::SetUserGamma(const float InValue)
 {
 	UserGameOptionData.GamePlayOption.Setting_Gamma = InValue;
 
-	// FIXME: 밝기 조절 방식이 정해지고난 뒤 구현 필요
-	
 	ApplySettings(false);
 }
 

@@ -196,8 +196,6 @@ void ACorePlayerCharacter::BeginPlay()
 void ACorePlayerCharacter::InitPlayerCharacter()
 {
 	InitializeProperty();
-	//FIXME : Edit After Appear Animation Added
-	//AppearPlayerCharacter();
 }
 
 void ACorePlayerCharacter::InitializeProperty()
@@ -1716,11 +1714,8 @@ void ACorePlayerCharacter::SetItemSkillState(EPlayerSkillState InSkillState, FSk
 			#if ONLY_KEYBOARD
 			//CalibrateMeshMouseCursor();
 			#endif
-			//FIXME : Const Item Aim Decrease Value Speed Edit 
 			PlayerStatusComponent->SetStatusCharMove(PlayerStatusComponent->GetStatusCharMove() * 0.5f);
-			//SetInputable(false);
-			//PlayCommonMontage(*InSkillData.sSkillName, nullptr);
-			//SetItemSkillState(EPlayerSkillState::Aim);
+			
 			CurrentUsingSkill->StartSkill();
 			ESkillTypes LocItemSkillType = UGlobalUtilsLibrary::GetStringToEnum<ESkillTypes>(InSkillData.sSkillType);
 			if(LocItemSkillType == ESkillTypes::Indirect || LocItemSkillType == ESkillTypes::Direct)
